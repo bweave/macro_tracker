@@ -1,0 +1,51 @@
+<div id="macro_results"></div>
+
+<%= strada_form_with model: @macro_calculator, html: {"data-turbo-action": "replace"} do |form| %>
+  <% if @macro_calculator.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@macro_calculator.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+        <% @macro_calculator.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+    <%= form.label :gender, class: "form-label" %>
+    <%= form.select :gender, options_for_select(%w[male female]), { include_blank: true }, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :age, class: "form-label" %>
+    <%= form.number_field :age, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :height_unit, class: "form-label" %>
+    <%= form.select :height_unit, options_for_select(%w[in cm]), {}, class:"form-control" %>
+    <%= form.label :height, class: "form-label" %>
+    <%= form.number_field :height, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :weight_unit, class: "form-label" %>
+    <%= form.select :weight_unit, options_for_select(%w[lb kg]), {}, class:"form-control" %>
+    <%= form.label :weight, class: "form-label" %>
+    <%= form.number_field :weight, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :activity_level, class: "form-label" %>
+    <%= form.select :activity_level, options_for_select(MacroCalculator::ACTIVITY_LEVELS.keys.map { |k| [k.to_s.titleize, k] }), { include_blank: true }, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :goal, class: "form-label" %>
+    <%= form.select :goal, options_for_select(MacroCalculator::GOALS.map { |g| [g.to_s.titleize, g] }), { include_blank: true }, class:"form-control" %>
+  </div>
+
+  <%= form.submit "Calculate", class: 'btn btn-primary' %>
+<% end %>

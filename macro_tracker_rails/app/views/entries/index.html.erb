@@ -1,0 +1,26 @@
+<% content_for :title, "Entries" %>
+
+<% if @entries.present? %>
+  <div class="row justify-content-center">
+    <div class="col col-lg-8">
+      <div class="d-flex justify-content-end align-items-end">
+        <%= link_to "Add", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary" %>
+      </div>
+
+      <% %w[breakfast lunch snack dinner].each do |meal| %>
+        <div class="fs-2"><%= meal.capitalize %></div>
+        <% @entries[meal]&.each do |entry| %>
+          <%= render entry %>
+        <% end %>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="d-flex justify-content-center">
+    <div class="text-center">
+      <h1>No entries found</h1>
+      <%= link_to "Create one", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

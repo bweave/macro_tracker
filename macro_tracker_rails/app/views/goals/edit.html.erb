@@ -1,0 +1,9 @@
+<% content_for :title, "Editing goal" %>
+
+<div class="d-flex justify-content-between align-items-baseline">
+  <h1>Editing goal</h1>
+  <%= link_to 'Cancel', goals_path, class: "text-danger text-decoration-none hidden-on-native" %>
+</div>
+
+<%= render 'form', goal: @goal %>
+

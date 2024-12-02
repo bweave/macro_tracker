@@ -1,0 +1,37 @@
+# Foods
+---
+brian_acai_bowl:
+  name: "Acai Bowl"
+  protein: 7
+  carbs: 36
+  fat: 18.0
+  calories: 320
+  fiber: 10
+  user: brian
+
+brian_fair_life_protein_shake:
+  name: "Fair Life Protein Shake"
+  protein: 30
+  carbs: 4
+  fat: 2.5
+  calories: 150
+  fiber: 1
+  user: brian
+
+brian_clif_builders_bar:
+  name: "Clif Builders Bar"
+  protein: 20
+  carbs: 29
+  fat: 11.0
+  calories: 290
+  fiber: 2
+  user: brian
+
+brian_orgain_protein_fiber_powder:
+  name: "Orgain Protein + Fiber powder"
+  protein: 21
+  carbs: 20
+  fat: 4.5
+  calories: 160
+  fiber: 8
+  user: brian

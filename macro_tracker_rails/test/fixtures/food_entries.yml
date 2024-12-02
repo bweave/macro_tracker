@@ -1,0 +1,26 @@
+# Food Entries
+---
+brian_breakfast:
+  food: brian_acai_bowl
+  entry: brian_breakfast
+  servings: 1
+  user: brian
+
+brian_lunch:
+  food: brian_orgain_protein_fiber_powder
+  entry: brian_lunch
+  servings: 1
+  user: brian
+
+brian_snack:
+  food: brian_clif_builders_bar
+  entry: brian_snack
+  servings: 1
+  user: brian
+
+brian_dinner:
+  food: brian_fair_life_protein_shake
+  entry: brian_dinner
+  servings: 1
+  user: brian
+

@@ -1,0 +1,22 @@
+# Goals
+---
+brian_protein:
+  name: "Protein"
+  amount: 145
+  user: brian
+
+brian_carbs:
+  name: "Carbs"
+  amount: 315
+  user: brian
+
+brian_fat:
+  name: "Fat"
+  amount: 67
+  user: brian
+
+brian_calories:
+  name: "Calories"
+  amount: 2350
+  user: brian
+

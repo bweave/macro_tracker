@@ -1,0 +1,41 @@
+<%= strada_form_with model: entry, html: {"data-turbo-action": "replace"} do |form| %>
+  <% if entry.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+        <% entry.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <%= dynamic_fields_for form, :food_entries do |fe| %>
+    <div class="form-group mb-3">
+      <%= fe.label :food_id, class: "form-label" %>
+      <%= fe.select :food_id, options_for_select(Food.all.pluck(:name, :id)), { include_blank: true }, class:"form-control" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= fe.label :servings, class: "form-label" %>
+      <%= fe.number_field :servings, class:"form-control" %>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+    <%= form.label :eaten_at, class: "form-label" %>
+    <%= form.datetime_field :eaten_at, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :mealtime, class: "form-label" %>
+    <%= form.select :mealtime, options_for_select(Entry.mealtimes.keys.map { |k| [k.titleize, k] }, entry.mealtime), {}, class: "form-select" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.submit "Save", class: 'btn btn-primary' %>
+  </div>
+<% end %>

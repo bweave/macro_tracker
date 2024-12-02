@@ -1,0 +1,12 @@
+<%= content_for :title, "Today" %>
+
+<div class="d-flex justify-content-end align-items-end">
+  <%= link_to "Add", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary" %>
+</div>
+
+<% @today.each do |macro, (amount, goal)| %>
+  <div class="d-flex w-100 justify-content-between">
+    <div class="fs-1"><%= macro %></div>
+    <div class="fs-2 text-muted"><%= amount %> / <%= goal %></div>
+  </div>
+<% end %>

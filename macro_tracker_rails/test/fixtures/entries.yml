@@ -1,0 +1,21 @@
+# Entries
+---
+brian_breakfast:
+  mealtime: breakfast
+  eaten_at: 2024-10-01 08:00:00
+  user: brian
+
+brian_lunch:
+  mealtime: lunch
+  eaten_at: 2024-10-01 12:00:00
+  user: brian
+
+brian_snack:
+  mealtime: snack
+  eaten_at: 2024-10-01 14:00:00
+  user: brian
+
+brian_dinner:
+  mealtime: dinner
+  eaten_at: 2024-10-01 18:00:00
+  user: brian

@@ -1,0 +1,47 @@
+<%= strada_form_with model: food, html: {"data-turbo-action": "replace"} do |form| %>
+  <% if food.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+        <% food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :calories, class: "form-label" %>
+    <%= form.text_field :calories, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :carbs, class: "form-label" %>
+    <%= form.text_field :carbs, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :protein, class: "form-label" %>
+    <%= form.text_field :protein, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :fat, class: "form-label" %>
+    <%= form.text_field :fat, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :fiber, class: "form-label" %>
+    <%= form.text_field :fiber, class:"form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.submit "Save", class: 'btn btn-primary' %>
+  </div>
+<% end %>
