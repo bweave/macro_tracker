@@ -29,7 +29,7 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.save
         format.html do
-          redirect_to @entry, notice: "Entry was successfully created."
+          redirect_to entries_path, notice: "Entry was successfully created."
         end
         format.json { render :show, status: :created, location: @entry }
       else
