@@ -6,6 +6,7 @@ class EntryQuery
   def for_date(date)
     relation
       .where(eaten_at: date.all_day)
+      .order(:mealtime)
       .pluck(columns)
       .map(&method(:to_struct))
       .group_by(&:mealtime)
@@ -40,7 +41,7 @@ class EntryQuery
     Struct.new(
       :id,
       :mealtime,
-      :eaten_at,
+      :eaten_at_datetime,
       :servings,
       :name,
       :calories,
@@ -49,6 +50,10 @@ class EntryQuery
       :fat,
       :fiber
     ) do
+      def eaten_at
+        eaten_at_datetime.strftime("%I:%M %p")
+      end
+
       def to_key
         [ "entry", id ]
       end
@@ -59,6 +64,10 @@ class EntryQuery
 
       def to_partial_path
         "entries/entry"
+      end
+
+      def to_param
+        id.to_s
       end
     end
 end

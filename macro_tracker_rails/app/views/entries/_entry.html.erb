@@ -1,4 +1,13 @@
-<div id="<%= dom_id entry %>" class="d-flex w-100 justify-content-between align-items-baseline">
-  <div class="fs-4"><%= entry.name %></div>
-  <div class="text-muted"><%= pluralize(entry.servings, "serving") %></div>
-</div>
+<%= link_to edit_entry_path(entry),  id: dom_id(entry), class: "list-group-item list-group-item-action" do %>
+  <div class="d-flex justify-content-between align-items-baseline mb-1">
+    <h5><%= entry.name %></h5>
+    <small class="text-muted"><%= pluralize(entry.servings, "serving") %> @ <%= entry.eaten_at %></small>
+  </div>
+  <ul class="list-inline mb-1">
+    <li class="list-inline-item">Protein: <%= entry.protein %></li>
+    <li class="list-inline-item">Carbs: <%= entry.carbs %></li>
+    <li class="list-inline-item">Fat: <%= entry.fat %></li>
+    <li class="list-inline-item">Fiber: <%= entry.fiber %></li>
+    <li class="list-inline-item">Calories: <%= entry.calories %></li>
+  </ul>
+<% end %>

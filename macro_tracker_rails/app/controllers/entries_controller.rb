@@ -46,7 +46,7 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.update(entry_params)
         format.html do
-          redirect_to @entry, notice: "Entry was successfully updated."
+          redirect_to entries_path, notice: "Entry was successfully updated."
         end
         format.json { render :show, status: :ok, location: @entry }
       else
@@ -82,9 +82,10 @@ class EntriesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def entry_params
     params.require(:entry).permit(
+      :user_id,
       :mealtime,
       :eaten_at,
-      food_entries_attributes: %i[food_id servings]
+      food_entries_attributes: %i[id food_id servings]
     )
   end
 end

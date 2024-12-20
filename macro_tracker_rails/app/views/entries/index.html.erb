@@ -1,20 +1,18 @@
 <% content_for :title, "Entries" %>
 
 <% if @entries.present? %>
-  <div class="row justify-content-center">
-    <div class="col col-lg-8">
-      <div class="d-flex justify-content-end align-items-end">
-        <%= link_to "Add", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary" %>
+  <div id="entries">
+    <% @entries.each do |meal, entries| %>
+      <div class="mb-3">
+        <h3><%= meal.capitalize %></h3>
+        <div class="list-group mb-3">
+          <% entries.each do |entry| %>
+            <%= render entry %>
+          <% end %>
+        </div>
       </div>
-
-      <% %w[breakfast lunch snack dinner].each do |meal| %>
-        <div class="fs-2"><%= meal.capitalize %></div>
-        <% @entries[meal]&.each do |entry| %>
-          <%= render entry %>
-        <% end %>
-        <hr>
-      <% end %>
-    </div>
+    <% end %>
+    <%= link_to "Add", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary w-100" %>
   </div>
 <% else %>
   <div class="d-flex justify-content-center">

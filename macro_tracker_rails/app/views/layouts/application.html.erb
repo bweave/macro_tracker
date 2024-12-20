@@ -21,9 +21,12 @@
   <body>
     <%= render "shared/navbar" unless hotwire_native_app? %>
     <div class="container-lg mt-3">
-      <p id="notice"><%= notice %></p>
-
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <%= render "shared/flash" %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

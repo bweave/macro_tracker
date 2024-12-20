@@ -1,8 +1,5 @@
 <% content_for :title, "New entry" %>
 
-<div class="d-flex justify-content-between align-items-baseline">
-  <h1>New entry</h1>
-  <%= link_to "Cancel", entries_path, class: "text-danger text-decoration-none hidden-on-native" %>
-</div>
+<h1>New entry</h1>
 
 <%= render "form", entry: @entry %>

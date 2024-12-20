@@ -16,7 +16,7 @@
   <%= dynamic_fields_for form, :food_entries do |fe| %>
     <div class="form-group mb-3">
       <%= fe.label :food_id, class: "form-label" %>
-      <%= fe.select :food_id, options_for_select(Food.all.pluck(:name, :id)), { include_blank: true }, class:"form-control" %>
+      <%= fe.select :food_id, options_for_select(Food.all.pluck(:name, :id), fe.object.food_id), { include_blank: true }, class:"form-control" %>
     </div>
 
     <div class="form-group mb-3">
@@ -36,6 +36,10 @@
   </div>
 
   <div class="form-group mb-3">
-    <%= form.submit "Save", class: 'btn btn-primary' %>
+    <%= form.submit "Save", class: 'btn btn-outline-primary w-100 mb-3' %>
+    <% if entry.persisted? %>
+      <%= link_to "Destroy", entry, class: "btn btn-outline-danger w-100 mb-3", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= link_to "Cancel", :back, class: "text-danger hidden-on-native" %>
   </div>
 <% end %>
