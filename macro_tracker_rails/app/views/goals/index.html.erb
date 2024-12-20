@@ -1,31 +1,22 @@
 <% content_for :title, "Goals" %>
 
 <% if @goals.present? %>
-  <div class="row justify-content-center">
-    <div class="col col-lg-8">
-      <div class="d-flex justify-content-between align-items-end mb-3">
-        <h1>Goals</h1>
-        <div class="d-flex">
-          <%= link_to "New", new_goal_path,
-            "data-controller": "bridge--button",
-            "data-bridge-side": "right",
-            "data-bridge-ios-image": "plus",
-            class: "btn btn-outline-primary me-3"
-          %>
-          <%= link_to "Calculator", new_macro_calculator_path,
-            "data-controller": "bridge--calculator-button",
-            "data-bridge-side": "left",
-            class: "btn btn-outline-primary w-100"
-          %>
-        </div>
-      </div>
-
-      <% @goals.each do |goal| %>
-        <%= render goal %>
-      <% end %>
-
-    </div>
+  <div id="goals" class="list-group mb-3">
+    <% @goals.each do |goal| %>
+      <%= render goal %>
+    <% end %>
   </div>
+  <%= link_to "Add", new_goal_path,
+    "data-controller": "bridge--button",
+    "data-bridge-side": "right",
+    "data-bridge-ios-image": "plus",
+    class: "btn btn-outline-primary w-100 mb-3"
+  %>
+  <%= link_to "Calculator", new_macro_calculator_path,
+    "data-controller": "bridge--calculator-button",
+    "data-bridge-side": "left",
+    class: "btn btn-outline-success w-100"
+  %>
 <% else %>
   <div class="d-flex justify-content-center">
     <div class="text-center">

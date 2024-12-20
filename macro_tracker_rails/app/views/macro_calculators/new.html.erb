@@ -47,5 +47,5 @@
     <%= form.select :goal, options_for_select(MacroCalculator::GOALS.map { |g| [g.to_s.titleize, g] }), { include_blank: true }, class:"form-control" %>
   </div>
 
-  <%= form.submit "Calculate", class: 'btn btn-primary' %>
+  <%= form.submit "Calculate", class: 'btn btn-outline-primary w-100' %>
 <% end %>
