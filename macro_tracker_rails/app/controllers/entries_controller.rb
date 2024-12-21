@@ -29,7 +29,8 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.save
         format.html do
-          redirect_to entries_path, notice: "Entry was successfully created."
+          refresh_or_redirect_to entries_path,
+                                 notice: "Entry was successfully created."
         end
         format.json { render :show, status: :created, location: @entry }
       else
@@ -46,7 +47,8 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.update(entry_params)
         format.html do
-          redirect_to entries_path, notice: "Entry was successfully updated."
+          refresh_or_redirect_to entries_path,
+                                 notice: "Entry was successfully updated."
         end
         format.json { render :show, status: :ok, location: @entry }
       else
