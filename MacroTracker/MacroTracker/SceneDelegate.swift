@@ -1,11 +1,6 @@
 import HotwireNative
 import UIKit
 
-let pathConfiguration = PathConfiguration(sources: [
-  .file(Server.localPathConfigURL),
-  .server(Server.remotePathConfigURL)
-])
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
   
@@ -15,10 +10,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = scene as? UIWindowScene else { return }
     
     UINavigationBar.configureWithOpaqueBackground()
-    
-    Hotwire.config.debugLoggingEnabled = pathConfiguration.settings["debug"] as? Bool ?? false
-    Hotwire.config.pathConfiguration.matchQueryStrings = false
-    Hotwire.registerBridgeComponents(BridgeComponent.allTypes)
     
     let window = UIWindow(windowScene: windowScene)
     self.window = window

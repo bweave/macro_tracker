@@ -54,13 +54,13 @@ class TabCoordinator: NSObject, Coordinator {
   private func setupTabs() {
     UITabBar.configureWithOpaqueBackground(tabBarController: tabBarController)
     
-    let tabDictionaries = pathConfiguration.settings["tabs"] as! [[String: String]]
+    let tabDictionaries = Hotwire.config.pathConfiguration.settings["tabs"] as! [[String: String]]
     tabs = tabDictionaries.map(TabItem.init)
     
     var viewControllers: [UIViewController] = []
     
     for tab in tabs {
-      let tabNavigator = Navigator(pathConfiguration: pathConfiguration)
+      let tabNavigator = Navigator()
       let tabViewController = tabNavigator.rootViewController
       tabViewController.tabBarItem = UITabBarItem(
         title: tab.title,
