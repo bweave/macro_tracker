@@ -43,7 +43,7 @@ class FoodsController < ApplicationController
     respond_to do |format|
       if @food.update(food_params)
         format.html do
-          redirect_to @food, notice: "Food was successfully updated."
+          redirect_to foods_path, notice: "Food was successfully updated."
         end
         format.json { render :show, status: :ok, location: @food }
       else

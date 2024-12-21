@@ -43,7 +43,7 @@ class GoalsController < ApplicationController
     respond_to do |format|
       if @goal.update(goal_params)
         format.html do
-          redirect_to @goal, notice: "Goal was successfully updated."
+          redirect_to goals_path, notice: "Goal was successfully updated."
         end
         format.json { render :show, status: :ok, location: @goal }
       else

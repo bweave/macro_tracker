@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
-  resources :entries
-  resources :foods
-  resources :goals
+  resources :entries, except: %i[show]
+  resources :foods, except: %i[show]
+  resources :goals, except: %i[show]
   resource :account, only: :show
   resource :dashboard, only: :show
   resources :macro_calculators, only: %i[new create]
 
-  # TODO: is all this namespacing necessary?
   namespace :hotwire do
     namespace :ios do
       resource :path_configuration, only: %i[show]
