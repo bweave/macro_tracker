@@ -1,18 +1,13 @@
 <% content_for :title, "Foods" %>
 
 <% if @foods.present? %>
-  <div class="row justify-content-center">
-    <div class="col col-lg-8">
-      <div class="d-flex justify-content-between align-items-end mb-3">
-        <h1>Foods</h1>
-        <%= link_to "New", new_food_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary" %>
-      </div>
-
-      <% @foods.each do |food| %>
-        <%= render food %>
-      <% end %>
-    </div>
+  <div id="foods" class="list-group mb-3">
+    <h1>Foods</h1>
+    <% @foods.each do |food| %>
+      <%= render food %>
+    <% end %>
   </div>
+  <%= link_to "Add", new_food_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary w-100" %>
 <% else %>
   <div class="d-flex justify-content-center">
     <div class="text-center">

@@ -42,6 +42,10 @@
   </div>
 
   <div class="form-group mb-3">
-    <%= form.submit "Save", class: 'btn btn-primary' %>
+    <%= form.submit "Save", class: 'btn btn-outline-primary w-100 mb-3' %>
+    <% if food.persisted? %>
+      <%= link_to 'Delete', food, class: "btn btn-outline-danger w-100 mb-3", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= link_to 'Cancel', foods_path, class: "text-danger text-decoration-none hidden-on-native" %>
   </div>
 <% end %>
