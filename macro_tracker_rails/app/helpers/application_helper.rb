@@ -8,7 +8,7 @@ module ApplicationHelper
       content_for(:hotwire_native_title) || content_for(:title) ||
         "Macro Tracker"
     else
-      "Macro Tracker - #{content_for(:title)}" || "Macro Tracker"
+      content_for(:title) || "Macro Tracker"
     end
   end
 
