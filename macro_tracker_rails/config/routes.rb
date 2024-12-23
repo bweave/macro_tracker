@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
+  resource :registration, only: %i[new create]
   resources :entries, except: %i[show]
   resources :foods, except: %i[show]
   resources :goals, except: %i[show]

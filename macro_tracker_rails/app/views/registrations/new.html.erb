@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col col-md-6">
+    <h1>Sign up</h1>
+    <%= strada_form_with model: @user, url: registration_path, html: {"data-turbo-action": "replace"} do |form| %>
+      <% if @user.errors.any? %>
+        <div class="alert alert-danger mb-3">
+          <h2><%= pluralize(@user.errors.count, "error") %> prevented registration:</h2>
+
+          <ul>
+            <% @user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mb-3">
+        <%= form.label :first_name, class: "form-label" %>
+        <%= form.text_field :first_name, required: true, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :last_name, class: "form-label" %>
+        <%= form.text_field :last_name, required: true, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :email_address, class: "form-label" %>
+        <%= form.email_field :email_address, required: true, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password, class: "form-label" %>
+        <%= form.password_field :password, required: true, maxlength: 72, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password_confirmation, class: "form-label" %>
+        <%= form.password_field :password_confirmation, required: true, maxlength: 72, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.submit "Sign up", class: "btn btn-outline-primary w-100" %>
+      </div>
+
+      <p>
+        Already have an account? <%= link_to "Log in", new_session_path, class: "text-muted" %>
+      </p>
+    <% end %>
+  </div>
+</div>

@@ -31,7 +31,10 @@
           </li>    
         <% else %>
           <li class="nav-item">
-            <%= link_to "Log in", new_session_path, id: "login", class: "nav-link" %>
+            <%= link_to "Log in", new_session_path, id: "login", class: "nav-link #{"active" if current_page?(new_session_path)}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_registration_path, id: "sign-up", class: "nav-link #{"active" if current_page?(new_registration_path)}" %>
           </li>
         <% end %>
       </ul>
