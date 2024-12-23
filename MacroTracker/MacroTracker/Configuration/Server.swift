@@ -7,7 +7,8 @@ enum Server {
     #elseif STAGING
     return URL(string: "http://192.168.1.97:3000")!
     #else
-    return URL(string: "https://macrotrack.ing")!
+    // return URL(string: "https://macrotrack.ing")!
+    return URL(string: "https://macrotracker.bweave.dev")!
     #endif
   }
   
