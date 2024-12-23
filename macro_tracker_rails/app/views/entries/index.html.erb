@@ -1,5 +1,5 @@
 <% content_for :title, "Entries" %>
-
+ 
 <% if @entries.present? %>
   <div id="entries">
     <% @entries.each do |meal, entries| %>
@@ -17,7 +17,8 @@
 <% else %>
   <div class="d-flex justify-content-center">
     <div class="text-center">
-      <h1>No entries found</h1>
+      <h2 class="fs-1">No entries found.</h2>
+      <p class="lead">Add your first one for today.</p>
       <%= link_to "Create one", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-primary" %>
     </div>
   </div>
