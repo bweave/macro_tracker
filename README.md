@@ -4,6 +4,7 @@ A little app to track daily macros. Rails on the backend, iOS on the front end, 
 
 ## TODO
 
+- Add Sign up
 - Hotwire Native 1.1 update. Refer to Joe Masilotti's email for the changes required.
 - Clean up data modeling between Goals and Foods form. Goals should be the same for everyone: carbs, protein, fat, calories, fiber (optional).
 - Remove dark mode. It's neat, but not necessary.
