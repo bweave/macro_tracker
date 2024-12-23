@@ -1,8 +1,8 @@
+<% content_for :title, "Forgot your password?" %>
+
 <h1>Forgot your password?</h1>
 
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-
-<%= form_with url: passwords_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.submit "Email reset instructions" %>
+<%= strada_form_with url: passwords_path, html: {"data-turbo-action": "replace"} do |form| %>
+  <%= form.email_field :email_address, class: "form-control", required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
+  <%= form.submit "Send reset instructions", class: "btn btn-outline-primary w-100" %>
 <% end %>
