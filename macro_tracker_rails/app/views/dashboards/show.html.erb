@@ -1,7 +1,7 @@
 <%= content_for :title, "Today" %>
 
 <div class="mb-3">
-  <% if @stats.present? %>
+  <% if @stats.present? && @goals.present? %>
     <%= render "progress_rings", stats: @stats, goals: @goals %>
     <%= render "stats", stats: @stats, goals: @goals %>
   <% else %>
