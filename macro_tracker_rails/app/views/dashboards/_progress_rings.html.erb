@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+  <div class="progress-rings-wrapper me-3">
+    <!-- https://www.chilitime.design/2018/09/ActivityRings/ -->
+    <svg class="progress-rings" viewBox='0 0 37 37'>
+      <g class="ring ring1" style="transform: scale(1) rotate(-90deg);">
+        <circle stroke-width="3" r="15.915" cx="50%" cy="50%" class="background" />
+        <circle stroke-width="3" r="15.915" cx="50%" cy="50%" class="completed" stroke-dasharray="<%= stats.carbs / goals[:carbs] * 100 %>, 100" />
+      </g>
+      <!-- Stroke width = 3 / scaling-factor  - SVG Essentials Chapter 5 -->
+      <g class="ring ring2" style="transform: scale(0.75) rotate(-90deg);">
+        <circle stroke-width="4" r="15.915" cx="50%" cy="50%" class="background" />
+        <circle stroke-width="4" r="15.915" cx="50%" cy="50%" class="completed" stroke-dasharray="<%= stats.protein / goals[:protein] * 100 %>, 100" />
+      </g>
+      <!-- Stroke width = 3 / scaling-factor - SVG Essentials Chapter 5 -->
+      <g class="ring ring3" style="transform: scale(0.5) rotate(-90deg);">
+        <circle stroke-width="6" r="15.915" cx="50%" cy="50%" class="background" />
+        <circle stroke-width="6" r="15.915" cx="50%" cy="50%" class="completed" stroke-dasharray="<%= stats.fat / goals[:fat] * 100 %>, 100" />
+      </g>
+    </svg>
+  </div>
+  <div class="d-flex align-items-center">
+    <div>
+      <div class="carbs fs-2">Carbs <%= stats.carbs %></div>
+      <div class="protein fs-2">Protein <%= stats.protein %></div>
+      <div class="fat fs-2">Fat <%= stats.fat %></div>
+    </div>
+  </div>
+</div>

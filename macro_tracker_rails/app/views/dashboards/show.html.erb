@@ -1,13 +1,9 @@
 <%= content_for :title, "Today" %>
 
 <div class="mb-3">
-  <% if @today.present? %>
-    <% @today.each do |macro, (amount, goal)| %>
-      <div class="d-flex w-100 justify-content-between">
-        <div class="fs-1"><%= macro %></div>
-        <div class="fs-2 text-muted"><%= amount %> / <%= goal %></div>
-      </div>
-    <% end %>
+  <% if @stats.present? %>
+    <%= render "progress_rings", stats: @stats, goals: @goals %>
+    <%= render "stats", stats: @stats, goals: @goals %>
   <% else %>
     <div class="fs-1">No entries, yet.</div>
     <p class="lead text-muted">Add your first entry to start tracking your macros.</p>

@@ -47,10 +47,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_16_181340) do
 
   create_table "goals", force: :cascade do |t|
     t.string "name"
-    t.string "amount"
+    t.integer "amount"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 

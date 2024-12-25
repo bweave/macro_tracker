@@ -36,3 +36,79 @@ html[data-platform-web] {
 [data-bridge-components~="calculator"] [data-controller~="bridge--calculator-button"] {
   display: none;
 }
+
+// Progress Rings
+$carbs-red: #c53f3d;
+$protein-green: #94d55a;
+$fat-blue: #70bed7;
+
+.carbs {
+  color: $carbs-red
+}
+
+.protein {
+  color: $protein-green
+}
+
+.fat {
+  color: $fat-blue
+}
+
+@keyframes RingProgress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.progress-rings-wrapper {
+  width: 256;
+  height: 256;
+}
+
+.progress-rings {
+  height: 100%;
+  width: 100%;
+
+  .ring {
+    transform-origin: 50%;
+  }
+
+  .ring1 {
+    .background {
+      stroke: transparentize($carbs-red, 0.8);
+    }
+
+    .completed {
+      stroke: $carbs-red;
+    }
+  }
+
+  .ring2 {
+    .background {
+      stroke: transparentize($protein-green, 0.8);
+    }
+
+    .completed {
+      stroke: $protein-green;
+    }
+  }
+
+  .ring3 {
+    .background {
+      stroke: transparentize($fat-blue, 0.8);
+    }
+
+    .completed {
+      stroke: $fat-blue;
+    }
+  }
+
+  .completed {
+    animation: RingProgress 1s ease-in-out forwards;
+    stroke-linecap: round;
+  }
+
+  circle {
+    fill: none;
+  }
+}

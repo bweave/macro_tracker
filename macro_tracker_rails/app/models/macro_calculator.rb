@@ -32,7 +32,11 @@ class MacroCalculator
   validates :age, presence: true, numericality: { greater_than: 0 }
 
   attribute :activity_level, :string
-  validates :activity_level, presence: true, inclusion: { in: ACTIVITY_LEVELS.keys }
+  validates :activity_level,
+            presence: true,
+            inclusion: {
+              in: ACTIVITY_LEVELS.keys.map(&:to_s)
+            }
 
   attribute :goal, :string
   validates :goal, presence: true, inclusion: { in: GOALS }
