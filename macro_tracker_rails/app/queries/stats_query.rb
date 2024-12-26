@@ -30,12 +30,12 @@ class StatsQuery
   class StatsResult
     attr_reader :carbs, :protein, :fat, :calories, :fiber
 
-    def initialize(carbs = 0, protein = 0, fat = 0, calories = 0, fiber = 0)
-      @carbs = carbs
-      @protein = protein
-      @fat = fat
-      @calories = calories
-      @fiber = fiber
+    def initialize(carbs, protein, fat, calories, fiber)
+      @carbs = carbs || 0
+      @protein = protein || 0
+      @fat = fat || 0
+      @calories = calories || 0
+      @fiber = fiber || 0
     end
   end
 end
