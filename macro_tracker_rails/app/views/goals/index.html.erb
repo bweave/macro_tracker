@@ -20,8 +20,8 @@
 <% else %>
   <div class="d-flex justify-content-center">
     <div class="text-center">
-      <h1>No goals found</h1>
-      <%= link_to "Create one", new_goal_path, class: "btn btn-primary" %>
+      <h2 class="fs-1">No goals added, yet.</h2>
+      <%= link_to "Add", new_goal_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary" %>
     </div>
   </div>
 <% end %>
