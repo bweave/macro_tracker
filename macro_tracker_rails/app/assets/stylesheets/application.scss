@@ -1,10 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-[data-bs-theme] {
-  background-color: var(--bs-body-bg)
-}
-
 html[data-platform-hotwire-native] {
   .hidden-on-native {
     display: none;
