@@ -28,7 +28,6 @@
 		2FFD016A2CEF6CB400EBE733 /* UITabBar+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD01692CEF6CB400EBE733 /* UITabBar+Appearance.swift */; };
 		2FFD016D2CEFD84900EBE733 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD016C2CEFD84900EBE733 /* Server.swift */; };
 		2FFD01732CF76ADA00EBE733 /* CalculatorButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD01722CF76ADA00EBE733 /* CalculatorButtonComponent.swift */; };
-		2FFD01752CFC9F2B00EBE733 /* MenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD01742CFC9F2B00EBE733 /* MenuComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		2FFD01692CEF6CB400EBE733 /* UITabBar+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Appearance.swift"; sourceTree = "<group>"; };
 		2FFD016C2CEFD84900EBE733 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		2FFD01722CF76ADA00EBE733 /* CalculatorButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonComponent.swift; sourceTree = "<group>"; };
-		2FFD01742CFC9F2B00EBE733 /* MenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +180,6 @@
 				2FFD01622CEE939700EBE733 /* FormComponent.swift */,
 				2FFD01642CEE976800EBE733 /* ButtonComponent.swift */,
 				2FFD01722CF76ADA00EBE733 /* CalculatorButtonComponent.swift */,
-				2FFD01742CFC9F2B00EBE733 /* MenuComponent.swift */,
 			);
 			path = BridgeComponents;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 				2FFD01592CEE740D00EBE733 /* TabItem.swift in Sources */,
 				2F5929AA2CEE61E000619223 /* SceneDelegate.swift in Sources */,
 				2FFD01652CEE976800EBE733 /* ButtonComponent.swift in Sources */,
-				2FFD01752CFC9F2B00EBE733 /* MenuComponent.swift in Sources */,
 				2FFD016A2CEF6CB400EBE733 /* UITabBar+Appearance.swift in Sources */,
 				2FFD01732CF76ADA00EBE733 /* CalculatorButtonComponent.swift in Sources */,
 			);
