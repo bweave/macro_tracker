@@ -9,10 +9,8 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
   resources :macro_calculators, only: %i[new create]
 
-  namespace :hotwire do
-    namespace :ios do
-      resource :path_configuration, only: %i[show]
-    end
+  resources :configurations, only: [] do
+    get :ios, on: :collection
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

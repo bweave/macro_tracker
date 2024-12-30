@@ -1,7 +1,9 @@
-class Hotwire::Ios::PathConfigurationsController < ApplicationController
-  allow_unauthenticated_access only: %i[show]
+class ConfigurationsController < ApplicationController
+  allow_unauthenticated_access
 
-  def show
+  def ios
+    # NOTE: When/if needed, I could move this to a model in the database
+    # and handle fetching specific versions.
     render json: {
              settings: {
                debug: Rails.env.development?,
