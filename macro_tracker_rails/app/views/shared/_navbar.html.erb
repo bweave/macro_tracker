@@ -14,9 +14,6 @@
             <%= link_to "Entries", entries_path, class: "nav-link #{"active" if current_page?(entries_path)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Goals", goals_path, class: "nav-link #{"active" if current_page?(goals_path)}" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "Foods", foods_path, class: "nav-link #{"active" if current_page?(foods_path)}" %>
           </li>
         <% end %>
@@ -26,6 +23,9 @@
           <li class="nav-item dropdown">
             <a id="current-user-dropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= current_user.first_name %></a>
             <ul class="dropdown-menu">
+              <li class="dropdown-item">
+                <%= link_to "Account", account_path, class: "nav-link" %>
+              </li>
               <li class="dropdown-item">
                 <%= link_to "Log out", session_path, id: "logout", data: { turbo_method: :delete }, class: "nav-link" %>
               </li>

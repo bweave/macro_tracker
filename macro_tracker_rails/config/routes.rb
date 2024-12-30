@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resource :registration, only: %i[new create]
   resources :entries, except: %i[show]
   resources :foods, except: %i[show]
-  resources :goals, except: %i[show]
-  resource :account, only: :show
+  resources :goals, only: %i[update]
+  resource :account, only: %i[show destroy]
   resource :dashboard, only: :show
   resources :macro_calculators, only: %i[new create]
 

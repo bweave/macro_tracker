@@ -1,31 +1,10 @@
-<%= strada_form_with model: goal, html: {"data-turbo-action": "replace"} do |form| %>
-  <% if goal.errors.any? %>
-    <div class="alert alert-danger">
-      <h2><%= pluralize(goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
-
-      <ul>
-        <% goal.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with model: goal, id: dom_id(goal), data: { controller: "autosave" }, html: { autocomplete: "off" } do |form| %>
+  <div class="row row-cols-3 g-3 align-items-center mb-3">
+    <div class="col-12">
+      <div class="form-floating">
+        <%= form.text_field :amount, data: { action: "input->autosave#submit" }, id: "#{dom_id(goal)}_amount", class:"form-control" %>
+        <%= form.label goal.name %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="form-group mb-3">
-    <%= form.label :name, class: "form-label" %>
-    <%= form.text_field :name, class:"form-control" %>
-  </div>
-
-  <div class="form-group mb-3">
-    <%= form.label :amount, class: "form-label" %>
-    <%= form.text_field :amount, class:"form-control" %>
-  </div>
-
-  <div class="form-group mb-3">
-    <%= form.submit "Save", class: "btn btn-outline-primary w-100 mb-3" %>
-    <% if goal.persisted? %>
-      <%= link_to 'Delete', goal, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-outline-danger w-100 mb-3" %>
-    <% end %>
-    <%= link_to 'Cancel', goals_path, class: "text-danger text-decoration-none hidden-on-native" %>
   </div>
 <% end %>
