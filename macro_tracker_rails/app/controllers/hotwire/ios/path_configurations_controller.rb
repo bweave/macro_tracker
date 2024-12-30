@@ -19,12 +19,6 @@ class Hotwire::Ios::PathConfigurationsController < ApplicationController
                    selectedImage: "note.text"
                  },
                  {
-                   title: "Goals",
-                   path: "/goals",
-                   image: "star",
-                   selectedImage: "star.fill"
-                 },
-                 {
                    title: "Food",
                    path: "/foods",
                    image: "fork.knife",
@@ -40,14 +34,14 @@ class Hotwire::Ios::PathConfigurationsController < ApplicationController
              },
              rules: [
                {
-                 patterns: [ ".*" ],
+                 patterns: [".*"],
                  properties: {
                    context: "default",
                    pull_to_refresh_enabled: true
                  }
                },
                {
-                 patterns: [ "refresh_historical_location" ],
+                 patterns: ["refresh_historical_location"],
                  properties: {
                    presentation: "refresh"
                  }

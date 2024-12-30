@@ -14,12 +14,6 @@
         "selectedImage":"note.text"
       },
       {
-        "title": "Goals",
-        "path": "/goals",
-        "image": "star",
-        "selectedImage": "star.fill"
-      },
-      {
         "title": "Food",
         "path": "/foods",
         "image": "fork.knife",
