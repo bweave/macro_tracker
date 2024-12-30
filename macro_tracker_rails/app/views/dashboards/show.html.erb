@@ -2,12 +2,11 @@
 
 <div class="mb-3">
   <% if @stats.present? && @goals.present? %>
-    <%= render "progress_rings", stats: @stats, goals: @goals %>
+    <%= render "progress_rings", stats: @stats, goals: @goals if @goals.values.all?(&:positive?) %>
     <%= render "stats", stats: @stats, goals: @goals %>
+    <%= link_to "Add entry", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary w-100" %>
   <% else %>
-    <div class="fs-1">No entries, yet.</div>
-    <p class="lead text-muted">Add your first entry to start tracking your macros.</p>
+    <div class="fs-1">No data, yet.</div>
+    <p class="lead text-muted">Set up your <%= link_to "goals", account_path %>, and add your first <%= link_to "entry", new_entry_path %> to start tracking your macros.</p>
   <% end %>
 </div>
-
-<%= link_to "Add entry", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary w-100" %>
