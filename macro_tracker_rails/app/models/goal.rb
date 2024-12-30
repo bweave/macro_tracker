@@ -8,7 +8,12 @@ class Goal < ApplicationRecord
             uniqueness: {
               scope: :user_id
             }
-  validates :amount, presence: true, numericality: { greater_than: -1 }
+  validates :amount,
+            presence: true,
+            numericality: {
+              only_integer: true,
+              greater_than: -1
+            }
 
   def self.for_current_user
     exists? ? all : prototype
