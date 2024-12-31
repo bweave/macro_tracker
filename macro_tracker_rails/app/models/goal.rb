@@ -1,6 +1,8 @@
 class Goal < ApplicationRecord
   include ScopedToUser
 
+  attribute :amount, :integer, default: 0
+
   validates :name,
             inclusion: {
               in: %w[carbs protein fat fiber calories]
@@ -20,8 +22,6 @@ class Goal < ApplicationRecord
   end
 
   def self.prototype
-    %w[carbs protein fat fiber calories].map do |name|
-      create!(name: name, amount: 0)
-    end
+    %w[carbs protein fat fiber calories].map { |name| create!(name: name) }
   end
 end

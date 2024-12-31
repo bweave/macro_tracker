@@ -3,7 +3,6 @@ class GoalsController < ApplicationController
 
   before_action :set_goal, only: %i[update]
 
-  # PATCH/PUT /goals/1 or /goals/1.json
   def update
     @goal.update(goal_params)
     render turbo_stream:
