@@ -3,6 +3,8 @@ class Goal < ApplicationRecord
 
   attribute :amount, :integer, default: 0
 
+  # TODO: should name be an enum?
+
   validates :name,
             inclusion: {
               in: %w[carbs protein fat fiber calories]
@@ -18,10 +20,10 @@ class Goal < ApplicationRecord
             }
 
   def self.for_current_user
-    exists? ? all : prototype
+    exists? ? all : build_for_current_user
   end
 
-  def self.prototype
+  def self.build_for_current_user
     %w[carbs protein fat fiber calories].map { |name| create!(name: name) }
   end
 end
