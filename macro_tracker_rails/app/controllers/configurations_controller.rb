@@ -36,14 +36,14 @@ class ConfigurationsController < ApplicationController
              },
              rules: [
                {
-                 patterns: [".*"],
+                 patterns: [ ".*" ],
                  properties: {
                    context: "default",
                    pull_to_refresh_enabled: true
                  }
                },
                {
-                 patterns: ["refresh_historical_location"],
+                 patterns: [ "refresh_historical_location" ],
                  properties: {
                    presentation: "refresh"
                  }
