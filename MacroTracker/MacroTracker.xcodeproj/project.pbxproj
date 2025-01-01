@@ -177,9 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				2FFD01602CEE937300EBE733 /* BridgeComponent+App.swift */,
-				2FFD01622CEE939700EBE733 /* FormComponent.swift */,
 				2FFD01642CEE976800EBE733 /* ButtonComponent.swift */,
 				2FFD01722CF76ADA00EBE733 /* CalculatorButtonComponent.swift */,
+				2FFD01622CEE939700EBE733 /* FormComponent.swift */,
 			);
 			path = BridgeComponents;
 			sourceTree = "<group>";

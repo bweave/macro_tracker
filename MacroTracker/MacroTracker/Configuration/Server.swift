@@ -13,7 +13,7 @@ enum Server {
   }
   
   static var remotePathConfigURL: URL {
-    rootURL.appending(path: "/configurations/ios.json")
+    rootURL.appending(path: "/configurations/ios")
   }
   
   static var localPathConfigURL: URL {
