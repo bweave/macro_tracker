@@ -27,9 +27,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html do
-          redirect_to foods_path, notice: "Food was successfully created."
-        end
+        format.html { refresh_or_redirect_to foods_path }
         format.json { render :show, status: :created, location: @food }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,9 +40,7 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html do
-          redirect_to foods_path, notice: "Food was successfully updated."
-        end
+        format.html { refresh_or_redirect_to foods_path }
         format.json { render :show, status: :ok, location: @food }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,12 +54,7 @@ class FoodsController < ApplicationController
     @food.destroy!
 
     respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.remove(@food) }
-      format.html do
-        redirect_to foods_path,
-                    status: :see_other,
-                    notice: "Food was successfully destroyed."
-      end
+      format.html { refresh_or_redirect_to foods_path, status: :see_other }
       format.json { head :no_content }
     end
   end
