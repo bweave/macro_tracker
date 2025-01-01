@@ -1,6 +1,8 @@
 class Entry < ApplicationRecord
   include ScopedToUser
 
+  broadcasts_refreshes
+
   has_many :food_entries, inverse_of: :entry, dependent: :destroy
   has_many :foods, through: :food_entries
 
