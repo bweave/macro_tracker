@@ -1,10 +1,6 @@
-<%= form_with model: goal, id: dom_id(goal), data: { controller: "autosave" }, html: { autocomplete: "off" } do |form| %>
-  <div class="row row-cols-3 g-3 align-items-center mb-3">
-    <div class="col-12">
-      <div class="form-floating">
-        <%= form.text_field :amount, data: { action: "input->autosave#submit" }, id: "#{dom_id(goal)}_amount", class:"form-control" %>
-        <%= form.label goal.name %>
-      </div>
-    </div>
+<%= form_with model: goal, id: dom_id(goal), data: { controller: "autosave" }, class: "mb-3", html: { autocomplete: "off" } do |form| %>
+  <div class="form-floating">
+    <%= form.number_field :amount, data: { action: "input->autosave#submit" }, id: "#{dom_id(goal)}_amount", class:"form-control" %>
+    <%= form.label "#{dom_id(goal)}_amount", goal.name.titleize %>
   </div>
 <% end %>
