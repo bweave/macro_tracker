@@ -7,6 +7,7 @@ class ConfigurationsController < ApplicationController
     render json: {
              settings: {
                debug: Rails.env.development?,
+               primary_color: "#198754", # TODO: kinda sux that this is hardcoded
                tabs: [
                  {
                    title: "Today",

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F50C10C2D5131320040666A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F50C10B2D5131320040666A /* UIColor+Hex.swift */; };
 		2F5929A82CEE61E000619223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5929A72CEE61E000619223 /* AppDelegate.swift */; };
 		2F5929AA2CEE61E000619223 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5929A92CEE61E000619223 /* SceneDelegate.swift */; };
-		2F5929AC2CEE61E000619223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5929AB2CEE61E000619223 /* ViewController.swift */; };
 		2F5929AF2CEE61E000619223 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2F5929AE2CEE61E000619223 /* Base */; };
 		2F5929B12CEE61E100619223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F5929B02CEE61E100619223 /* Assets.xcassets */; };
 		2F5929B42CEE61E100619223 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2F5929B32CEE61E100619223 /* Base */; };
@@ -49,10 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F50C10B2D5131320040666A /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		2F5929A42CEE61E000619223 /* MacroTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5929A72CEE61E000619223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F5929A92CEE61E000619223 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F5929AB2CEE61E000619223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F5929AE2CEE61E000619223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F5929B02CEE61E100619223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F5929B32CEE61E100619223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 				2FFD01572CEE740D00EBE733 /* Models */,
 				2F5929D72CEE621600619223 /* path-configuration.json */,
 				2F5929A92CEE61E000619223 /* SceneDelegate.swift */,
-				2F5929AB2CEE61E000619223 /* ViewController.swift */,
 			);
 			path = MacroTracker;
 			sourceTree = "<group>";
@@ -190,6 +189,7 @@
 		2FFD01662CEF6B3100EBE733 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2F50C10B2D5131320040666A /* UIColor+Hex.swift */,
 				2FFD01672CEF6B5000EBE733 /* UINavigationBar+Appearance.swift */,
 				2FFD01692CEF6CB400EBE733 /* UITabBar+Appearance.swift */,
 			);
@@ -346,11 +346,11 @@
 			files = (
 				2FB357C72D4040D3004FD7E4 /* NavigationComponent.swift in Sources */,
 				2FFD01612CEE937300EBE733 /* BridgeComponent+App.swift in Sources */,
-				2F5929AC2CEE61E000619223 /* ViewController.swift in Sources */,
 				2F5929A82CEE61E000619223 /* AppDelegate.swift in Sources */,
 				2FFD01682CEF6B5000EBE733 /* UINavigationBar+Appearance.swift in Sources */,
 				2FFD01632CEE939700EBE733 /* FormComponent.swift in Sources */,
 				2FFD01582CEE740D00EBE733 /* TabCoordinator.swift in Sources */,
+				2F50C10C2D5131320040666A /* UIColor+Hex.swift in Sources */,
 				2FFD016D2CEFD84900EBE733 /* Server.swift in Sources */,
 				2FFD01592CEE740D00EBE733 /* TabItem.swift in Sources */,
 				2F5929AA2CEE61E000619223 /* SceneDelegate.swift in Sources */,
