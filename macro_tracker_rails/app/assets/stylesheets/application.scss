@@ -1,9 +1,23 @@
+// required to get $orange variable
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$primary: $green; // set $primary to #198754
+
+// merge with existing $theme-colors map
+$theme-colors: map-merge($theme-colors, ("primary": $primary));
+
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+html,
+body {
+  height: 100%;
+}
+
 html[data-platform-hotwire-native] {
   .hidden-on-native {
-    display: none;
+    display: none !important;
   }
 
   // Note: this is heavy-handed and a more granular approach is probably warranted

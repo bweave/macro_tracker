@@ -3,13 +3,14 @@ class EntryQuery
     new.for_date(date)
   end
 
-  def for_date(date)
+  def for_date(date_range = Date.today.all_day)
     relation
-      .where(eaten_at: date.all_day)
+      .where(eaten_at: date_range)
       .order(:mealtime)
       .pluck(columns)
-      .map(&method(:to_struct))
-      .group_by(&:mealtime)
+      .map { |row| Result.new(*row) }
+      .group_by { |entry| entry.eaten_at.to_date }
+      .transform_values { |entries| entries.group_by(&:mealtime) }
   end
 
   private
@@ -33,15 +34,11 @@ class EntryQuery
     ]
   end
 
-  def to_struct(raw_data)
-    EntryQueryResult.new(*raw_data)
-  end
-
-  EntryQueryResult =
+  Result =
     Struct.new(
       :id,
       :mealtime,
-      :eaten_at_datetime,
+      :eaten_at,
       :servings,
       :name,
       :calories,
@@ -50,8 +47,8 @@ class EntryQuery
       :fat,
       :fiber
     ) do
-      def eaten_at
-        eaten_at_datetime.strftime("%I:%M %p")
+      def eaten_at_time
+        eaten_at.strftime("%I:%M %p")
       end
 
       def to_key

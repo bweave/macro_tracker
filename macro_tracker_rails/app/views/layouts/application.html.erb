@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="turbo-refresh-method" content="morph">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -21,7 +20,7 @@
 
   <body>
     <%= render "shared/navbar" unless hotwire_native_app? %>
-    <div class="container-lg mt-3">
+    <div class="container-lg pt-3">
       <div class="row">
         <div class="col-md-10 offset-md-1">
           <%= render "shared/flash" %>

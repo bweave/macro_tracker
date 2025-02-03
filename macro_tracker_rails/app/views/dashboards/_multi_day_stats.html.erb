@@ -1,0 +1,28 @@
+<% labels = stats.map(&:date) %>
+<% %i[carbs protein fat calories fiber].each do |macro| %>
+  <%
+  data = {
+    datasets: [
+      {
+        type: "bar",
+        label: macro.to_s.titleize,
+        data: stats.map(&macro),
+      },
+      {
+        type: "line",
+        label: "Goal: #{goals[macro]}",
+        data: stats.size.times.map { goals[macro] },
+      },
+    ],
+    labels:,
+  }
+  %>
+
+  <div
+    data-controller="chartjs"
+    data-chartjs-data-value="<%= data.to_json %>"
+    class="mb-5"
+  >
+    <canvas data-chartjs-target="canvas"></canvas>
+  </div>
+<% end %>

@@ -6,6 +6,7 @@ extension BridgeComponent {
       ButtonComponent.self,
       CalculatorButtonComponent.self,
       FormComponent.self,
+      NavigationComponent.self,
     ]
   }
 }

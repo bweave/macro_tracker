@@ -18,6 +18,7 @@
 		2F5929CB2CEE61E100619223 /* MacroTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5929CA2CEE61E100619223 /* MacroTrackerUITestsLaunchTests.swift */; };
 		2F5929D82CEE621600619223 /* path-configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F5929D72CEE621600619223 /* path-configuration.json */; };
 		2F5929DB2CEE630D00619223 /* HotwireNative in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5929DA2CEE630D00619223 /* HotwireNative */; };
+		2FB357C72D4040D3004FD7E4 /* NavigationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB357C62D4040D3004FD7E4 /* NavigationComponent.swift */; };
 		2FFD01582CEE740D00EBE733 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD01542CEE740D00EBE733 /* TabCoordinator.swift */; };
 		2FFD01592CEE740D00EBE733 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD01562CEE740D00EBE733 /* TabItem.swift */; };
 		2FFD015E2CEE8BF900EBE733 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2FFD015D2CEE8BF900EBE733 /* KeychainAccess */; };
@@ -62,6 +63,7 @@
 		2F5929C82CEE61E100619223 /* MacroTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroTrackerUITests.swift; sourceTree = "<group>"; };
 		2F5929CA2CEE61E100619223 /* MacroTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2F5929D72CEE621600619223 /* path-configuration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "path-configuration.json"; sourceTree = "<group>"; };
+		2FB357C62D4040D3004FD7E4 /* NavigationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationComponent.swift; sourceTree = "<group>"; };
 		2FFD01542CEE740D00EBE733 /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		2FFD01562CEE740D00EBE733 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		2FFD01602CEE937300EBE733 /* BridgeComponent+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BridgeComponent+App.swift"; sourceTree = "<group>"; };
@@ -123,19 +125,19 @@
 		2F5929A62CEE61E000619223 /* MacroTracker */ = {
 			isa = PBXGroup;
 			children = (
-				2FFD016B2CEFD82400EBE733 /* Configuration */,
-				2FFD01662CEF6B3100EBE733 /* Extensions */,
-				2FFD015F2CEE935500EBE733 /* BridgeComponents */,
 				2F5929A72CEE61E000619223 /* AppDelegate.swift */,
-				2F5929A92CEE61E000619223 /* SceneDelegate.swift */,
+				2F5929B02CEE61E100619223 /* Assets.xcassets */,
+				2FFD015F2CEE935500EBE733 /* BridgeComponents */,
+				2FFD016B2CEFD82400EBE733 /* Configuration */,
 				2FFD01552CEE740D00EBE733 /* Coordinators */,
+				2FFD01662CEF6B3100EBE733 /* Extensions */,
+				2F5929B52CEE61E100619223 /* Info.plist */,
+				2F5929B22CEE61E100619223 /* LaunchScreen.storyboard */,
+				2F5929AD2CEE61E000619223 /* Main.storyboard */,
 				2FFD01572CEE740D00EBE733 /* Models */,
 				2F5929D72CEE621600619223 /* path-configuration.json */,
+				2F5929A92CEE61E000619223 /* SceneDelegate.swift */,
 				2F5929AB2CEE61E000619223 /* ViewController.swift */,
-				2F5929AD2CEE61E000619223 /* Main.storyboard */,
-				2F5929B02CEE61E100619223 /* Assets.xcassets */,
-				2F5929B22CEE61E100619223 /* LaunchScreen.storyboard */,
-				2F5929B52CEE61E100619223 /* Info.plist */,
 			);
 			path = MacroTracker;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 				2FFD01642CEE976800EBE733 /* ButtonComponent.swift */,
 				2FFD01722CF76ADA00EBE733 /* CalculatorButtonComponent.swift */,
 				2FFD01622CEE939700EBE733 /* FormComponent.swift */,
+				2FB357C62D4040D3004FD7E4 /* NavigationComponent.swift */,
 			);
 			path = BridgeComponents;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB357C72D4040D3004FD7E4 /* NavigationComponent.swift in Sources */,
 				2FFD01612CEE937300EBE733 /* BridgeComponent+App.swift in Sources */,
 				2F5929AC2CEE61E000619223 /* ViewController.swift in Sources */,
 				2F5929A82CEE61E000619223 /* AppDelegate.swift in Sources */,

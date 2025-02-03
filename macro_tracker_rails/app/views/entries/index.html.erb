@@ -1,17 +1,45 @@
 <% content_for :title, "Entries" %>
- 
-<% if @entries.present? %>
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1>Entries</h1>
-    <%= link_to "Add", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary" %>
+
+<div class="pb-2 d-flex justify-content-between align-items-end border-bottom mb-3">
+  <h2 class="fs-1 mb-0">Entries</h1>
+  <div class="d-flex align-items-end">
+    <small class="fs-5 text-secondary me-2">Week of <%= @week.strftime("%D") %></small>
+    <div class="hidden-on-native d-flex justify-content-between align-items-end">
+      <div>
+        <span data-controller="bridge--navigation" class="me-3">
+          <%= link_to entries_path(week: @week.prev_week.cweek, year: @week.prev_week.cwyear), data: { "bridge--navigation-target": :previous, turbo_action: :replace }, title: "Previous week", class: "btn btn-outline-secondary" do %>
+            <i class="bi bi-chevron-left"></i>
+          <% end %>
+          <%= link_to entries_path(week: @week.next_week.cweek, year: @week.next_week.cwyear), data: { "bridge--navigation-target": :next, turbo_action: :replace }, title: "Next week", class: "btn btn-outline-secondary" do %>
+            <i class="bi bi-chevron-right"></i>
+          <% end %>
+        </span>
+        <%= link_to "Add",
+          new_entry_path,
+          data: {
+            controller: "bridge--button",
+            bridge_ios_image: "plus",
+          },
+          class: "btn btn-outline-primary" %>
+      </div>
+    </div>
   </div>
+</div>
+
+
+<% if @entries.present? %>
   <div id="entries">
-    <% @entries.each do |meal, entries| %>
+    <% @entries.each do |date, mealtimes| %>
       <div class="mb-3">
-        <h3><%= meal.capitalize %></h3>
+        <h5><%= date.strftime("%a %b %d, %Y") %></h5>
         <div class="list-group mb-3">
-          <% entries.each do |entry| %>
-            <%= render entry %>
+          <% mealtimes.each do |mealtime, entries| %>
+            <div class="mb-3">
+              <h6><%= mealtime.titleize %></h6>
+              <% entries.each do |entry| %>
+                <%= render entry %>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
@@ -19,10 +47,8 @@
   </div>
 <% else %>
   <div class="d-flex justify-content-center">
-    <div class="text-center">
-      <h2 class="fs-1">No entries added, yet.</h2>
-      <p class="lead">Add your first one for today.</p>
-      <%= link_to "Add", new_entry_path, data: { controller: "bridge--button", bridge_ios_image: "plus" }, class: "btn btn-outline-primary w-100" %>
+    <div class="mx-auto my-auto">
+      <p class="fs-3">No entries</p>
     </div>
   </div>
 <% end %>

@@ -5,7 +5,13 @@ class EntriesController < ApplicationController
 
   # GET /entries or /entries.json
   def index
-    @entries = EntryQuery.for_date(Date.current)
+    week = params[:week].present? ? params[:week].to_i : Date.today.cweek
+    year = params[:year].present? ? params[:year].to_i : Date.today.cwyear
+    monday = Date.commercial(year, week, 1)
+    sunday = monday - 1
+    saturady = sunday + 6
+    @week = monday
+    @entries = EntryQuery.for_date(sunday..saturady)
   end
 
   # GET /entries/1 or /entries/1.json
