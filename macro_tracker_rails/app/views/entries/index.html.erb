@@ -1,9 +1,9 @@
 <% content_for :title, "Entries" %>
 
-<div class="pb-2 d-flex justify-content-between align-items-end border-bottom mb-3">
-  <h2 class="fs-1 mb-0">Entries</h1>
+<div class="pb-2 d-flex justify-content-center justify-content-md-between align-items-end border-bottom mb-3">
+  <h1 class="mb-0">Entries</h1>
   <div class="d-flex align-items-end">
-    <small class="fs-5 text-secondary me-2">Week of <%= @week.strftime("%D") %></small>
+    <h2 class="fs-5 me-2 mb-0">Week of <%= @week.strftime("%D") %></h2>
     <div class="hidden-on-native d-flex justify-content-between align-items-end">
       <div>
         <span data-controller="bridge--navigation" class="me-3">
@@ -31,7 +31,7 @@
   <div id="entries">
     <% @entries.each do |date, mealtimes| %>
       <div class="mb-3">
-        <h5><%= date.strftime("%a %b %d, %Y") %></h5>
+        <h5 class="mb-3"><%= date.strftime("%a %b %d, %Y") %></h5>
         <div class="list-group mb-3">
           <% mealtimes.each do |mealtime, entries| %>
             <div class="mb-3">
