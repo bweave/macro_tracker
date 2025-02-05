@@ -12,7 +12,7 @@
 </div>
 
 <% if @stats.present? && @goals.present? %>
-  <% if params["range"] == "today" %>
+  <% if params["range"] == "today" || params["range"].blank? %>
     <%= render "progress_rings", stats: @stats.first, goals: @goals if @goals.values.all?(&:positive?) %>
     <%= render "stats", stats: @stats.first, goals: @goals %>
   <% else %>
