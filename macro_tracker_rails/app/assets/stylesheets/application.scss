@@ -24,6 +24,31 @@ html[data-platform-hotwire-native] {
   h1 {
     display: none
   }
+
+  // Remove bootstrap btn hover, focus, and active styles on mobile
+  .btn {
+    &:hover {
+      background-color: var(--bs-btn-bg);
+      color: var(--bs-btn-color);
+    }
+
+    &:focus {
+      background-color: var(--bs-btn-bg);
+      color: var(--bs-btn-color);
+    }
+
+    &.active {
+      &:hover {
+        background-color: var(--bs-btn-active-bg);
+        color: var(--bs-btn-active-color);
+      }
+
+      &:focus {
+        background-color: var(--bs-btn-active-bg);
+        color: var(--bs-btn-active-color);
+      }
+    }
+  }
 }
 
 html[data-platform-web] {
