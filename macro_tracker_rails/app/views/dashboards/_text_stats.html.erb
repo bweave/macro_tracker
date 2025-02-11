@@ -1,0 +1,8 @@
+<div class="mb-3">
+  <% goals.each do |macro,  goal| %>
+    <div class="d-flex w-100 justify-content-between">
+      <div class="fs-1"><%= macro.titleize %></div>
+      <div class="fs-2 text-muted"><%= stats.public_send(macro) %> / <%= goal %></div>
+    </div>
+  <% end %>
+</div>
