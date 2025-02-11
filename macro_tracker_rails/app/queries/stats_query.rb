@@ -1,12 +1,12 @@
 class StatsQuery
-  Result = Data.define(:date, :carbs, :protein, :fat, :calories, :fiber)
+  Stat = Data.define(:date, :carbs, :protein, :fat, :calories, :fiber)
 
   def initialize(time_range = Date.today.all_day)
     @time_range = time_range
   end
 
   def call
-    stats = relation.pluck(*columns).map { |row| Result.new(*row) }
+    stats = relation.pluck(*columns).map { |row| Stat.new(*row) }
     goals = Goal.pluck("LOWER(name)", :amount).to_h.with_indifferent_access
     [ stats, goals ]
   end
