@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg border-bottom">
+<nav class="navbar bg-primary navbar-expand-lg border-bottom"  data-bs-theme="dark">
   <div class="container-lg">
     <%= link_to "Macro Tracker", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,13 +8,13 @@
       <ul class="navbar-nav me-auto">
         <% if authenticated? %>
           <li class="nav-item">
-            <%= link_to "Dashboard", dashboard_path, class: "nav-link #{"active" if current_page?(dashboard_path)}" %>
+            <%= link_to "Stats", dashboard_path, class: "nav-link #{"active" if controller_name == "dashboards"}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Entries", entries_path, class: "nav-link #{"active" if current_page?(entries_path)}" %>
+            <%= link_to "Entries", entries_path, class: "nav-link #{"active" if controller_name == "entries"}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Foods", foods_path, class: "nav-link #{"active" if current_page?(foods_path)}" %>
+            <%= link_to "Foods", foods_path, class: "nav-link #{"active" if controller_name == "foods"}" %>
           </li>
         <% end %>
       </ul>
