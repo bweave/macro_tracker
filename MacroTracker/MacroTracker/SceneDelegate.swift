@@ -9,8 +9,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = scene as? UIWindowScene else { return }
 
-    UINavigationBar.configureWithOpaqueBackground()
-
     let window = UIWindow(windowScene: windowScene)
     self.window = window
 

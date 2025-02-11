@@ -22,24 +22,6 @@ class TabCoordinator: NSObject, Coordinator {
   }
   
   func start() {
-    // Force light theme for navigation bars
-    let navBarAppearance = UINavigationBarAppearance()
-    navBarAppearance.configureWithOpaqueBackground()
-    navBarAppearance.backgroundColor = .systemBackground
-    UINavigationBar.appearance().standardAppearance = navBarAppearance
-    UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-    UINavigationBar.appearance().overrideUserInterfaceStyle = .light
-    
-    // Force light theme for tab bar
-    let tabBarAppearance = UITabBarAppearance()
-    tabBarAppearance.configureWithOpaqueBackground()
-    tabBarAppearance.backgroundColor = .systemBackground
-    tabBarController.tabBar.standardAppearance = tabBarAppearance
-    if #available(iOS 15.0, *) {
-        tabBarController.tabBar.scrollEdgeAppearance = tabBarAppearance
-    }
-    tabBarController.tabBar.overrideUserInterfaceStyle = .light
-
     setupTabs()
     window.rootViewController = tabBarController
     window.makeKeyAndVisible()
