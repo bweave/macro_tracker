@@ -1,6 +1,8 @@
 class Goal < ApplicationRecord
   include ScopedToUser
 
+  broadcasts_refreshes
+
   attribute :amount, :integer, default: 0
 
   # TODO: should name be an enum?
