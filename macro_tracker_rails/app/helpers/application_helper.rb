@@ -30,7 +30,8 @@ module ApplicationHelper
             data: {
               action: "dynamic-fields#add"
             },
-            class: "btn btn-outline-primary btn-sm mb-3"
+            class: "btn btn-outline-primary btn-sm mb-3",
+            type: "button"
           ),
           # render "<template>"
           # stimulus:           `this.templateTarget` v
