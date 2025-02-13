@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Hotwire.config.makeCustomWebView = { config in
       let webView = WKWebView(frame: .zero, configuration: config)
       webView.allowsLinkPreview = false
+      webView.isInspectable = true
       return webView
     }
 #if DEBUG
