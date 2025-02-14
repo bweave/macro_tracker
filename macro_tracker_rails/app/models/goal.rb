@@ -1,7 +1,7 @@
 class Goal < ApplicationRecord
   include ScopedToUser
 
-  broadcasts_refreshes
+  after_commit :broadcast_later
 
   attribute :amount, :integer, default: 0
 
@@ -27,5 +27,11 @@ class Goal < ApplicationRecord
 
   def self.build_for_current_user
     %w[carbs protein fat fiber calories].map { |name| create!(name: name) }
+  end
+
+  private
+
+  def broadcast_later
+    broadcast_refresh_later_to user, :goals
   end
 end
