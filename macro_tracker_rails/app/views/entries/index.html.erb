@@ -1,7 +1,5 @@
 <% content_for :title, "Entries" %>
 
-<%#= render partial: "entries_list", locals: { date: @date, entries: @entries } %>
-
 <%= turbo_frame_tag "entries_list", target: "_top", data: { turbo_action: :advance } do %>
   <div class="pb-2 d-flex justify-content-between align-items-end border-bottom mb-3">
     <h2 class="mb-0"><%= @date.strftime("%a %b %d, %Y") %></h2>
